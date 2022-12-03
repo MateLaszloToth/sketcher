@@ -35,7 +35,7 @@ function createSlider() {
         slider.setAttribute('type', 'range');
         slider.setAttribute('min', '10');
         slider.setAttribute('max', '50');
-        slider.setAttribute('value', '16');
+        slider.setAttribute('value', '10');
         slider.classList.add('slider');
         slider.addEventListener('change', loadSketcherWindow);
     }
