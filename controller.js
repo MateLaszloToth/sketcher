@@ -48,7 +48,9 @@ function loadSketcherWindow() {
 
     const body = document.querySelector('body');
     body.removeEventListener('mouseup', turnDrawingOff);
+    body.removeEventListener('touchend', turnDrawingOff);
     body.addEventListener('mouseup', turnDrawingOff);
+    body.addEventListener('touchend', turnDrawingOff);
 }
 
 function getGridWindow() {
@@ -76,8 +78,11 @@ function appendCells(column, gridRowNumber, cellWidth) {
         cell.style.height = `${cellWidth}px`;
         cell.style.border = '1px solid peachpuff';
         cell.addEventListener('mousedown', turnDrawingOn);
+        cell.addEventListener('touchstart', turnDrawingOn);
         cell.addEventListener('mousemove', updateColor);
+        cell.addEventListener('touchmove', updateColor);
         cell.addEventListener('mouseup', turnDrawingOff);
+        cell.addEventListener('touchend', turnDrawingOff);
         column.appendChild(cell);
     }
 }
